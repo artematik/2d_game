@@ -15,7 +15,9 @@ Meteorit::~Meteorit()
 
 void Meteorit::move(float& time)
 {
+	newborn = false;
 	SpaceObject.move(static_cast<float>(-0.5*time),0);
+	LastBonus = SpaceObject.getPosition();
 	if (SpaceObject.getPosition().x < -60) restart();
 }
 
@@ -46,6 +48,7 @@ bool Meteorit::collision(FloatRect object)
 }
 void Meteorit::restart()
 {
+	newborn = true;
 	float size = static_cast<float>((rand() % 13 + 5) / 10);
 	float x = static_cast<float>(rand() % 1280+1280);
 	float y = static_cast<float>(rand() % 540 + 130);
@@ -55,9 +58,12 @@ void Meteorit::restart()
 	ix = rand() % 4;
 	iy = rand() % 5;
 	st = rand() % 2;
+
+	LastBonus = SpaceObject.getPosition();
+
 }
 
-FloatRect Meteorit::getMeteoritBounds()
+const FloatRect Meteorit::getMeteoritBounds()
 {
 	return SpaceObject.getGlobalBounds();
 }

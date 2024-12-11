@@ -29,3 +29,45 @@ void playerAnim(Sprite& player, FrameAnim& FramePlAnim, int traffic)
     }
 
 }
+// Проверка на столкновение метеоритов
+void Correct(Full& canister, int i, Meteorit* meteorit, int nmeteorit)
+{
+    for (int j = 0; j < nmeteorit; ++j)
+    {
+        if (j != i)
+        {
+            if (meteorit[j].collision(meteorit[i].getMeteoritBounds()))
+            {
+                meteorit[i].restart();
+                Correct(canister, i, meteorit, nmeteorit);
+                break;
+            }
+        }
+    }
+
+    if (canister.collision(meteorit[i].getMeteoritBounds()))
+    {
+        meteorit[i].restart();
+        Correct(canister, i, meteorit, nmeteorit);
+    }
+}
+// Проверка на столкновение канистры с топливом 
+void CorrectFull(Full& canister, Meteorit* meteorit, int nmeteorit)
+{
+    for (int j = 0; j < nmeteorit; ++j)
+    {
+        if (meteorit[j].collision(canister.getMeteoritBounds()))
+        {
+            canister.restart();
+            CorrectFull(canister, meteorit, nmeteorit);
+            break;
+        }
+    }
+}
+
+string IntToStr(int number)
+{
+    ostringstream TextString;
+    TextString << number; // записываем число очков
+    return TextString.str();
+}

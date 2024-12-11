@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Full.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Meteorit.cpp" />
     <ClCompile Include="moving.cpp" />
@@ -149,6 +150,7 @@
     <None Include="sfml-window-d-2.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Full.h" />
     <ClInclude Include="Meteorit.h" />
     <ClInclude Include="moving.h" />
   </ItemGroup>
