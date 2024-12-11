@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|solutionrelative:Meteorit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|solutionrelative:Meteorit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|solutionrelative:moving.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C64C1D1D-4A3F-409D-BC7B-59631C3EEBE8}|game_dev_begin2.vcxproj|solutionrelative:moving.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Meteorit.cpp",
+              "DocumentMoniker": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.cpp",
+              "RelativeDocumentMoniker": "Meteorit.cpp",
+              "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.cpp",
+              "RelativeToolTip": "Meteorit.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T17:44:50.455Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "moving.cpp",
+              "DocumentMoniker": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.cpp",
+              "RelativeDocumentMoniker": "moving.cpp",
+              "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.cpp",
+              "RelativeToolTip": "moving.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-11T13:49:59.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Meteorit.h",
+              "DocumentMoniker": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.h",
+              "RelativeDocumentMoniker": "Meteorit.h",
+              "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\Meteorit.h",
+              "RelativeToolTip": "Meteorit.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-09T17:37:09.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "moving.h",
+              "DocumentMoniker": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.h",
+              "RelativeDocumentMoniker": "moving.h",
+              "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\moving.h",
+              "RelativeToolTip": "moving.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-09T16:07:54.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\main.cpp*",
+              "RelativeToolTip": "main.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T13:26:30.977Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

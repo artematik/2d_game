@@ -1,0 +1,33 @@
+﻿  main.cpp
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(5,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(47,23): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(47,18): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(60,28): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(60,23): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(70,53): warning C4244: =: преобразование "sf::Int64" в "float", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(85,37): warning C4244: =: преобразование "double" в "T", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(85,37): warning C4244:         with
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(85,37): warning C4244:         [
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(85,37): warning C4244:             T=float
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(85,37): warning C4244:         ]
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(90,38): warning C4244: =: преобразование "double" в "T", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(90,38): warning C4244:         with
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(90,38): warning C4244:         [
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(90,38): warning C4244:             T=float
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(90,38): warning C4244:         ]
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(95,38): warning C4244: =: преобразование "double" в "T", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(95,38): warning C4244:         with
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(95,38): warning C4244:         [
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(95,38): warning C4244:             T=float
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(95,38): warning C4244:         ]
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(99,37): warning C4244: =: преобразование "double" в "T", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(99,37): warning C4244:         with
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(99,37): warning C4244:         [
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(99,37): warning C4244:             T=float
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(99,37): warning C4244:         ]
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(164,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Adyur\source\repos\game_dev_begin2\main.cpp(168,41): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Meteorit.cpp
+  moving.cpp
+  Создание кода...
+  game_dev_begin2.vcxproj -> C:\Users\Adyur\source\repos\game_dev_begin2\x64\Debug\game_dev_begin2.exe
