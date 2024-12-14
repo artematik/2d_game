@@ -51,8 +51,7 @@
               "ViewState": "AgIAAC0AAAAAAAAAAAAAACYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-09T17:44:50.455Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Full.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-11T15:20:05.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:20:05.384Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "moving.h",
               "ViewState": "AgIAAAIAAAAAAAAAAADwvxoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-09T16:07:54.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T16:07:54.128Z"
             },
             {
               "$type": "Document",
@@ -90,8 +87,7 @@
               "RelativeToolTip": "moving.cpp",
               "ViewState": "AgIAAA4AAAAAAAAAAAAkwDIAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-11T13:49:59.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T13:49:59.918Z"
             },
             {
               "$type": "Document",
@@ -103,8 +99,7 @@
               "RelativeToolTip": "Full.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-11T15:17:07.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:17:07.997Z"
             },
             {
               "$type": "Document",
@@ -116,8 +111,7 @@
               "RelativeToolTip": "Meteorit.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-09T17:37:09.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T17:37:09.216Z"
             },
             {
               "$type": "Document",
@@ -127,7 +121,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Adyur\\source\\repos\\game_dev_begin2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAsBAAAAAAAAAAAAABEBAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAuwBQBAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-09T13:26:30.977Z",
               "EditorCaption": ""

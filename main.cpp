@@ -11,6 +11,13 @@ int main()
     }
     win.setIcon(32, 32, icon.getPixelsPtr());
 
+    // радар
+    CircleShape Rcircle(5.f);
+    Rcircle.setFillColor(Color(255,0,0));
+    Rcircle.setOutlineThickness(2.f);
+    Rcircle.setOutlineColor(Color(255,155,0));
+    Rcircle.setPosition(495, 33);
+
     // Игровая панель
     Texture TextureInfoPanel;
     TextureInfoPanel.loadFromFile("Image/panel.png");
@@ -42,18 +49,18 @@ int main()
     plusfull.setCharacterSize(25);
 
     // Конец игры
-    text_pause.setFont(GameFont);
-    text_pause.setFillColor(Color::Red);
-    text_pause.setCharacterSize(100);
-    text_pause.setString(L"Конец игры");
-    text_pause.setPosition(300, 333);
+    end_game.setFont(GameFont);
+    end_game.setFillColor(Color::Red);
+    end_game.setCharacterSize(100);
+    end_game.setString(L"Конец игры");
+    end_game.setPosition(300, 333);
 
     // Пауза
-    end_game.setFont(GameFont);
-    end_game.setFillColor(Color::Magenta);
-    end_game.setCharacterSize(50);
-    end_game.setString(L"П А У З А");
-    end_game.setPosition(500, 333);
+    text_pause.setFont(GameFont);
+    text_pause.setFillColor(Color::Magenta);
+    text_pause.setCharacterSize(50);
+    text_pause.setString(L"П А У З А");
+    text_pause.setPosition(500, 333);
 
     // космос
     Texture TextureSpace;
@@ -84,6 +91,17 @@ int main()
     player.scale(0.7, 0.7);
     player.setPosition(Vector2f(80, 380));
 
+    // Земля
+    Texture textEarth;
+    if (!textEarth.loadFromFile("Image/earth.png"))
+    {
+        std::cerr << "Ошибка загрузки изображения Земли!" << std::endl;
+        return 3;
+    }
+
+    RectangleShape Earth(Vector2f(500, 500));
+    Earth.setTexture(&textEarth);
+    Earth.setPosition(Vector2f(1100, 150));
 
     // Взрыв космического корабля
     FrameAnim DestructAnim;
@@ -120,6 +138,8 @@ int main()
             switch (event.type)
             {
             case Event::KeyPressed:
+                if (event.key.code == Keyboard::Escape) GamePause = !GamePause;
+                if (event.key.code == Keyboard::End) win.close();
                 if ((event.key.code == Keyboard::S) || (event.key.code == Keyboard::Down))
                 {
                     if (full!=0)
@@ -173,124 +193,153 @@ int main()
                 break;
             }
         }
-        if (GameOver)
+
+        if (!GamePause)
         {
-            // Анимация взрыва
-            if (clockAnimMeteorit.getElapsedTime() > milliseconds(80))
+            if (Rcircle.getPosition().x <= 850)
             {
-                clockAnimMeteorit.restart();
-                DestructAnim.Frame += DestructAnim.Step;
-                if (DestructAnim.Frame > 405)
+                if (GameOver)
                 {
-                    DestructAnim.Frame1 += DestructAnim.Step1;
-                    DestructAnim.Frame = 5;
+                    // Анимация взрыва
+                    if (clockAnimMeteorit.getElapsedTime() > milliseconds(80))
+                    {
+                        clockAnimMeteorit.restart();
+                        DestructAnim.Frame += DestructAnim.Step;
+                        if (DestructAnim.Frame > 405)
+                        {
+                            DestructAnim.Frame1 += DestructAnim.Step1;
+                            DestructAnim.Frame = 5;
+                        }
+                        if (DestructAnim.Frame1 > 415)
+                        {
+                            GameOver = false;
+                            player.setPosition(Vector2f(80, 380));
+                            for (int i = 0; i < nmeteorit; ++i) meteorit[i].restart();
+                            canister.restart();
+                            Rcircle.setPosition(495, 33);
+                            DestructAnim.Frame = 5;
+                            DestructAnim.Frame1 = 15;
+                            full = 100;
+                        }
+                        else
+                        {
+                            destraction.setTextureRect(IntRect(DestructAnim.Frame, DestructAnim.Frame1, 95, 80));
+                        }
+                    }
                 }
-                if (DestructAnim.Frame1 > 415)
-                {
-                    GameOver = false;
-                    player.setPosition(Vector2f(80, 380));
-                    for (int i = 0; i < nmeteorit; ++i) meteorit[i].restart();
-                    canister.restart();
-                    DestructAnim.Frame = 5;
-                    DestructAnim.Frame1 = 15;
-                    full = 100;
-                }
+
                 else
                 {
-                    destraction.setTextureRect(IntRect(DestructAnim.Frame, DestructAnim.Frame1, 95, 80));
+                    // Анимация игрока
+                    if (clockAnimPlay.getElapsedTime() > milliseconds(100))
+                    {
+                        Rcircle.move(0.2, 0); // Движение радара
+                        clockAnimPlay.restart();
+                        playerAnim(player, FramePlAnim, traffic);
+
+                    }
+
+                    if (clockAnimMeteorit.getElapsedTime() > milliseconds(80))
+                    {
+                        clockAnimMeteorit.restart();
+                        for (int i = 0; i < nmeteorit; ++i) meteorit[i].animation();
+                    }
+
+                    if (clockAnimText.getElapsedTime() > milliseconds(50))
+                    {
+                        clockAnimMeteorit.restart();
+                        if (pusk > 0)
+                        {
+                            pusk--;
+                            plusfull.move(0, -1);
+                        }
+                    }
+
+                    // Космос
+                    gamingBackground.move(-0.2 * timeGamingBackground, 0);
+                    pos = gamingBackground.getPosition();
+                    if (pos.x < -1280) gamingBackground.setPosition(1280, pos.y);
+
+                    gamingBackground2.move(-0.2 * timeGamingBackground, 0);
+                    pos = gamingBackground2.getPosition();
+                    if (pos.x < -1280) gamingBackground2.setPosition(1280, pos.y);
+
+                    // Движение космического коробля
+                    playermove(player, moveRec);
+
+                    // Движение метеоритов
+                    for (int i = 0; i < nmeteorit;++i)
+                    {
+                        if (meteorit[i].newborn) Correct(canister, i, meteorit, nmeteorit); // проверка на совпадение и переназначение координат для метеоритов
+                        meteorit[i].move(timeMeteorit);
+                        if (meteorit[i].collision(player.getGlobalBounds()))
+                        {
+                            GameOver = true;
+                            destraction.setPosition(player.getPosition().x, player.getPosition().y);
+                            break;
+                        }
+                    }
+
+                    // Топливо
+                    if (canister.newborn) CorrectFull(canister, meteorit, nmeteorit);
+                    canister.move(timeMeteorit);
+
+                    // Заправка корабля
+                    if (canister.collision(player.getGlobalBounds()))
+                    {
+                        amountfull = 10 + rand() % 50;
+                        full += amountfull;
+                        plusfull.setString(IntToStr(amountfull));
+                        plusfull.setPosition(canister.getLastBonus().x, canister.getLastBonus().y);
+                        pusk = 40;
+                        canister.restart();
+                    }
+
+                    // Топливо на игровой панели
+                    // необязательно реализовывать цвет топлива потом можно реализовать
+                    textfull.setFillColor(Color::Green);
+                    textfull.setString(IntToStr(full) + L"тонн");
                 }
+
+
+                // отрисовка объектов
+                win.clear();
+                win.draw(gamingBackground2); // звездное небо
+                win.draw(gamingBackground); // звёздное небо
+                if (GameOver)
+                {
+                    win.draw(destraction);
+                }
+                else win.draw(player);
+                win.draw(player); // космический корабль
+                win.draw(GameInfopanel); // игровая панель
+                for (int i = 0; i < nmeteorit; i++) meteorit[i].draw(win);
+                canister.draw(win);
+                win.draw(textfull);
+                win.draw(Rcircle);
+                if (pusk > 0) win.draw(plusfull);
+                win.display();
+            }
+            else
+            {
+                win.clear();
+                win.draw(gamingBackground2); // звездное небо
+                win.draw(gamingBackground); // звёздное небо
+
+                win.draw(GameInfopanel); // игровая панель
+                win.draw(Rcircle);
+                win.draw(textfull);
+                win.draw(Earth);
+                win.draw(end_game);
+                win.display();
+                if (clockAnimText.getElapsedTime() > seconds(20)) win.close();
             }
         }
-
         else
         {
-            // Анимация игрока
-            if (clockAnimPlay.getElapsedTime() > milliseconds(100))
-            {
-                clockAnimPlay.restart();
-                playerAnim(player, FramePlAnim, traffic);
-
-            }
-
-            if (clockAnimMeteorit.getElapsedTime() > milliseconds(80))
-            {
-                clockAnimMeteorit.restart();
-                for (int i = 0; i < nmeteorit; ++i) meteorit[i].animation();
-            }
-
-            if (clockAnimText.getElapsedTime() > milliseconds(50))
-            {
-                clockAnimMeteorit.restart();
-                if (pusk > 0)
-                {
-                    pusk--;
-                    plusfull.move(0, -1);
-                }
-            }
-
-            // Космос
-            gamingBackground.move(-0.2 * timeGamingBackground, 0);
-            pos = gamingBackground.getPosition();
-            if (pos.x < -1280) gamingBackground.setPosition(1280, pos.y);
-
-            gamingBackground2.move(-0.2 * timeGamingBackground, 0);
-            pos = gamingBackground2.getPosition();
-            if (pos.x < -1280) gamingBackground2.setPosition(1280, pos.y);
-
-            // Движение космического коробля
-            playermove(player, moveRec);
-
-            // Движение метеоритов
-            for (int i = 0; i < nmeteorit;++i)
-            {
-                if (meteorit[i].newborn) Correct(canister, i, meteorit, nmeteorit); // проверка на совпадение и переназначение координат для метеоритов
-                meteorit[i].move(timeMeteorit);
-                if (meteorit[i].collision(player.getGlobalBounds()))
-                {
-                    GameOver = true;
-                    destraction.setPosition(player.getPosition().x, player.getPosition().y);
-                    break;
-                }
-            }
-
-            // Топливо
-            if (canister.newborn) CorrectFull(canister, meteorit, nmeteorit);
-            canister.move(timeMeteorit);
-
-            // Заправка корабля
-            if (canister.collision(player.getGlobalBounds()))
-            {
-                amountfull = 10 + rand() % 90;
-                full += amountfull;
-                plusfull.setString(IntToStr(amountfull));
-                plusfull.setPosition(canister.getLastBonus().x, canister.getLastBonus().y);
-                pusk = 40;
-                canister.restart();
-            }
-
-            // Топливо на игровой панели
-            // необязательно потом можно реализовать
-            textfull.setFillColor(Color::Green);
-            textfull.setString(IntToStr(full) + L"тонн");
+            win.draw(text_pause);
+            win.display();
         }
-
-        
-        // отрисовка объектов
-        win.clear();
-        win.draw(gamingBackground2); // звездное небо
-        win.draw(gamingBackground); // звёздное небо
-        if (GameOver)
-        {
-            win.draw(destraction);
-        }
-        else win.draw(player);
-        win.draw(player); // космический корабль
-        win.draw(GameInfopanel); // игровая панель
-        for (int i = 0; i < nmeteorit; i++) meteorit[i].draw(win);
-        canister.draw(win);
-        win.draw(textfull);
-        if (pusk > 0) win.draw(plusfull);
-        win.display();
     }
 
     return 0;
